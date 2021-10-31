@@ -1,0 +1,48 @@
+/* BIO NAV STYLES START */
+.bio__nav{
+    grid-column: span 2;
+    display: flex;
+    padding: 20px 0px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.bio__nav-btn {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    box-shadow: 0px 0px 0px 3px rgb(209, 209, 209);
+    border: 0px;
+    border-radius: 50%;
+    
+}
+.bio__nav-btn i{
+    margin: auto;
+    color: rgb(209, 209, 209);
+    font-size: 32px;
+}
+.bio__nav-btn:focus {
+    box-shadow: 0px 0px 0px 3px var(--detailColor);
+}
+.bio__nav-btn:hover{
+    background-image: linear-gradient(to bottom right, #8d10be 5%, var(--detailColor) 60%);
+    box-shadow: 0px 0px 0px 3px rgb(209, 209, 209);
+    cursor: pointer;
+}
+.bio__nav-dots{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+}
+.bio__nav-dot{
+    width: 10px;
+    height: 10px;
+    background: rgb(209, 209, 209);
+    border-radius: 50%;
+}
+.dot-active{
+    width: 15px;
+    height: 15px;
+    background-color: var(--detailColor);
+}

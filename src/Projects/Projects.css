@@ -1,0 +1,27 @@
+/* PROJECTS STYLES START */
+.grid-section-project{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    justify-content: center;
+    background-color: rgb(233, 241, 255);
+    padding: 150px 20%;
+    margin: 55px 0px;
+}
+
+/* MEDIA QUERIES START */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .grid-section-project{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, min-content);
+        padding: 80px 5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid-section-project{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, min-content);
+        padding: 80px 10px;
+    }
+}

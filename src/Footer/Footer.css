@@ -1,0 +1,26 @@
+/* FOOTER STYLES START */
+.flex-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    background-color: #fff;
+    border-top: 1px solid #d4d4d4;
+}
+.footer__link{
+    width: 25px;
+    margin: 0px 15px;
+    color: var(--subtextColor);
+    font-size: 2rem;
+}
+
+.footer__link:hover, .footer__link:focus {
+    color: var(--detailColor);
+}
+
+.footer__text{
+    font-weight: bold;
+}
+.footer__copyright{
+    color: var(--detailColor);
+}

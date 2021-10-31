@@ -1,0 +1,36 @@
+/* SOFT SKILLS STYLES START */
+.flex-about__skillSoft{
+    grid-column: span 2;
+    grid-row: 4/ span 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min-content;
+}
+
+.softSkills__textTitle{
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-top: 5px;
+}
+.softSkills__text {
+    padding: 10px;
+}
+
+/* MEDIA QUERIES START */
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .flex-about__skillSoft{
+        grid-column: span 4;
+        grid-row: 5;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .flex-about__skillSoft{
+        grid-column: span 4;
+        grid-row: 5;
+        width: 100%;
+        padding: 0px;
+    }
+}

@@ -1,0 +1,97 @@
+/* BIO CONTENT STYLES START */
+.bio__content-img{
+    float: left;
+    width: 50%;
+    max-width: 550px;
+    margin-right: 15px;
+    border-radius: 2%;
+    clip-path: polygon(43% 0, 100% 0, 100% 100%, 0 100%, 0 46%, 31% 0, 0 31%, 20% 0, 0 16%, 13% 0, 5% 6%, 18% 19%);
+}
+.content-header__title{
+    margin-bottom: 20px;
+    font-size: 2rem;
+    line-height: 2.3rem;
+}
+.content-header__text{
+    margin-bottom: 20px;
+    color: var(--subtextColor);
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.bio__text{
+    color: var(--subtextColor);
+    font-size: 1.2rem;
+}
+.colors:hover{
+    font-weight: 900;
+    animation: colors 1s   infinite normal none;
+}
+.fonts:hover{
+    font-weight: 900;
+    animation: fonts 0.5s   infinite alternate none;
+}
+.contact-link {
+    color: var(--detailColor);
+}
+
+/* TEXT ANIMATIONS START */
+@keyframes colors{
+    0%{
+        color: red;
+    }
+    50%{
+        color: yellow;
+    }
+    100%{
+        color: blue;
+    }
+}
+@keyframes fonts{
+    0%{
+        font-family: 'Times New Roman', Times, serif;
+    }
+    50%{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    100%{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+}
+
+/* MEDIA QUERIES START */
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .bio__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .content-header__text{
+        text-align: center;
+    }
+    .bio__text{
+        text-align: center;
+    }
+    .bio__content-img{
+        flex-shrink: 0.5;
+        min-width: 350px;
+    }
+    .content-header__title{
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bio__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bio__content-img{
+        flex-shrink: 0.5;
+        min-width: 350px;
+        margin-right: 0px;
+    }
+    .content-header__title{
+        margin-top: 20px;
+    }
+}
