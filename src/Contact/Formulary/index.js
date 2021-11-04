@@ -3,36 +3,70 @@ import './Formulary.css';
 
 
 function Formulary(){
-    const [nameOk, setNameOk] = React.useState(false);
-    const [mailOk, setMailOk] = React.useState(false);
-    const [msgOk, setMsgOk] = React.useState(false);
+    const [nameOk, setNameOk] = React.useState("");
+    const [mailOk, setMailOk] = React.useState("");
+    const [msgOk, setMsgOk] = React.useState("");
+    const [sent, setSent] = React.useState("");
+
 
     const nameHandler = (event)=>{
         let length = event.target.value.length;
+        let textValue= event.target.value;
         if(length >3 && length <50){ 
-            setNameOk(true);
+            setNameOk(textValue);
         } else {
-            setNameOk(false);
+            setNameOk("");
         }
     }
     const emailHandler = (event)=>{
         let length = event.target.value.length;
+        let textValue= event.target.value;
         if(length > 3 && length < 50 && event.target.value.includes("@") && event.target.value.includes("."))
-            setMailOk(true);
+            setMailOk(textValue);
         else 
-            setMailOk(false);
+            setMailOk("");
     }
     const msgHandler = (event)=>{
+        let textValue= event.target.value;
         console.log(event.target.value);
         if(event.target.value.includes(" ")){ 
-                setMsgOk(true);
+                setMsgOk(textValue);
         } else {
-            setMsgOk(false);
+            setMsgOk("");
         }
     }
 
+    const formSubmit = (event)=>{
+        event.preventDefault();
+        if(nameOk && mailOk && msgOk){
+
+            fetch("https://formsubmit.co/ajax/info@guscreations.net",{
+            method: "POST",
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: "FormSubmit",
+                message: `Name: ${nameOk}
+                Email: ${mailOk}
+                Message: ${msgOk}`
+            })
+            })
+            .then(response => response.json())
+            .then(json => {
+                setSent("sent");
+                document.getElementById("form").reset();
+                setNameOk("");
+                setMailOk("");
+                setMsgOk("");
+            })
+            }else {
+                setSent("unSent")
+            };
+    }
     return(
-        <form className="flex-form card fade-bot">
+        <form id="form" className="flex-form card fade-bot" onSubmit={formSubmit}>
             <input 
                 type="text" 
                 name="name" 
@@ -79,8 +113,8 @@ function Formulary(){
                 className="form__button" 
                 value="SUBMIT" />
             <span 
-                className="submit-response">
-                    <i className="far fa-check-circle"></i> Your e-mail was sent, thank you for your message!
+                className={`submit-response ${sent === "sent" ? "sent" : (sent === "unSent" ? "unSent" : "")}`}>
+                    <i className="far fa-check-circle"></i> {sent === "sent" ? "Your e-mail was sent, thank you for your message!" : "Please, make sure your message is ok"}
             </span>
         </form>
     );
