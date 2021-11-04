@@ -21,11 +21,11 @@ const navItemsArr = [
 ];
 
 function Navbar(){
-	const [visible, setVisible] = React.useState(false);
+	const [navVisible, setNavVisible] = React.useState(false);
 	const [activeLink, setActiveLink] = React.useState("");
 
 	const toggleList = ()=>{
-		setVisible(!visible);
+		setNavVisible(!navVisible);
 	};
 
 	const handlerActive = (text)=>{
@@ -34,10 +34,9 @@ function Navbar(){
 
     return(
         <nav className="navbar">
-			<div className={`navbar__button ${visible ? 'cross :' : ""}`} onClick={toggleList}>
+			<div className={`navbar__button ${navVisible ? 'cross :' : ""}`} onClick={toggleList}>
 			</div>
-			<ul className={`navbar__list-items ${visible ? 'list-active': ""}`}>
-
+			<ul className={`navbar__list-items ${navVisible ? 'list-active': ""}`}>
 				{navItemsArr.map(item => {
 					return (
 					<li key={item.title} className={`navbar__item ${activeLink === item.title ? "active" : ""}`}onClick={()=>handlerActive(item.title)}><a href={item.url} className="navbar__link">{item.title}</a></li>

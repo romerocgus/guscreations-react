@@ -12,11 +12,12 @@ import {Footer} from "../Footer";
 
 function App() {
 	
+
     return (
         <React.Fragment>
 			<Header />
 			<Navbar />
-			<About>
+			<About >
 				<h2 className="subtitle fade-left">About me</h2>
 				<Biography />
 				<Skills />
@@ -25,7 +26,7 @@ function App() {
 			<Projects />
 			<Contact />
 			<Footer />
-			{/* <Modal /> */}
+			
         </React.Fragment>
     );
 }

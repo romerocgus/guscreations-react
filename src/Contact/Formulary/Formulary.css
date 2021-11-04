@@ -36,10 +36,12 @@
     border: none;
     border-radius: 5px;
 }
-.input-error{
-    display: none;
+.input-condition{
+    /* display: none; */
     font-size: .8rem;
-    color: #ff0000;
+    color: rgb(187, 187, 187);
+    margin: 0px 10px;
+    align-self: flex-end;
 }
 .submit-response{
     display: none;
@@ -48,8 +50,8 @@
     font-style: 1.2rem;
     color: #008000;
 }
-.visible{
-    display: block;
+.checked{
+    color: #008000;
 }
 .sendFail{
     color: #ff0000;
