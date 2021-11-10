@@ -1,8 +1,12 @@
 import React from "react";
+import { useObserver } from "../../useObserver";
 import './Formulary.css';
 
 
-function Formulary(){
+function Formulary() {
+    const ref = React.useRef(null);
+	const [observed] = useObserver(ref);
+
     const [nameOk, setNameOk] = React.useState("");
     const [mailOk, setMailOk] = React.useState("");
     const [msgOk, setMsgOk] = React.useState("");
@@ -65,8 +69,9 @@ function Formulary(){
                 setSent("unSent")
             };
     }
+
     return(
-        <form id="form" className="flex-form card fade-bot" onSubmit={formSubmit}>
+        <form id="form" className={`flex-form card fade-bot ${observed ? "appear" : ""}`} onSubmit={formSubmit} ref={ref}>
             <input 
                 type="text" 
                 name="name" 
@@ -106,7 +111,7 @@ function Formulary(){
             <span 
                 className={`input-condition ${msgOk && "checked"}`}
                 >
-                    <i className="far fa-check-circle"></i> at least 2 words.
+                    <i className="far fa-check-circle"></i> at least 2 nice words.
             </span>
             <input 
                 type="submit" 

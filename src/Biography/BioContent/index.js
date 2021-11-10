@@ -24,8 +24,8 @@ function BioContent({ page }){
             return (
                 <p className="bio__text">
                     Well... That's a little bit of me, now i like to know more about you. If you want to talk, being for work, some insight, cool ideas or whatever, please send me a message in my
-                    <a class="contact-link" href="#Contact"> contact section</a> or 
-                    <a class="contact-link" href="#footer"> follow me</a> and we'll be friends!. i'll love to read what you have to say.
+                    <a className="contact-link" href="#Contact"> contact section</a> or 
+                    <a className="contact-link" href="#footer"> follow me</a> and we'll be friends!. i'll love to read what you have to say.
                     <br />
                     Hope you enjoy my site as much as i did making it!
                     <br />

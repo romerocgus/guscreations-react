@@ -1,7 +1,7 @@
 /* PROJECTS STYLES START */
 .grid-section-project{
     display: grid;
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
     grid-template-rows: min-content 1fr;
     justify-content: center;
     background-color: rgb(233, 241, 255);

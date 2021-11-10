@@ -8,17 +8,20 @@ import {SoftSkills} from "../SoftSkills";
 import {Projects} from "../Projects";
 import {Contact} from "../Contact";
 import {Footer} from "../Footer";
+import {useObserver} from "../useObserver";
 // import './App.css';
 
 function App() {
-	
+
+	const ref = React.useRef(null);
+	const [observed] = useObserver(ref);
 
     return (
         <React.Fragment>
 			<Header />
 			<Navbar />
-			<About >
-				<h2 className="subtitle fade-left">About me</h2>
+			<About>
+				<h2 className={`subtitle fade-left ${observed ? "appear" : ""}`} ref= {ref}>About me</h2>
 				<Biography />
 				<Skills />
 				<SoftSkills />

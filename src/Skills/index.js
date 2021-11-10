@@ -1,6 +1,8 @@
 import React from "react";
 import {SkillsContainer} from "./SkillsContainer";
 import {SkillItem} from "./SkillItem";
+import {useObserver} from "../useObserver";
+
 import "./Skills.css";
 
 import bsIcon from "../Images/bootstrap.svg";
@@ -68,8 +70,12 @@ const skillsArr = [
 ];
 
 function Skills() {
+
+    const ref = React.useRef(null);
+	const [observed] = useObserver(ref);
+
     return(
-        <section className="flex-about__skills card fade-left">
+        <section className={`flex-about__skills card fade-left ${observed ? "appear" : ""}`} ref={ref}>
             <h3 className="card__title">Technologies i use</h3>
             <SkillsContainer>
                 {skillsArr.map(skill => (

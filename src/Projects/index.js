@@ -2,6 +2,7 @@ import React from "react";
 import {ProjectsContainer} from "./ProjectsContainer";
 import {ProjectItem} from "./ProjectItem";
 import { Modal } from '../Modal';
+import { useObserver } from "../useObserver";
 import './Projects.css';
 
 import personalPageImg from "../Images/webpage.jpg";
@@ -38,12 +39,15 @@ const projectArr = [
     },
 ];
 
-function Projects() {
+function Projects(){
+    const ref = React.useRef(null);
+	const [observed] = useObserver(ref);
+    
     const [openModal, setOpenModal] = React.useState(null);
 
     return(
         <section id="Projects" className="grid-section-project section">
-            <h2 className="subtitle fade-right" >My Projects</h2>
+            <h2 className={`subtitle fade-right ${observed ? "appear" : ""}`} ref={ref} >My Projects</h2>
             <ProjectsContainer>
                 {projectArr.map(project => (
                     <ProjectItem 

@@ -1,6 +1,7 @@
 import React from "react";
 import {SkillsContainer} from "./SkillsContainer";
 import {SkillItem} from "./SkillItem";
+import { useObserver } from "../useObserver";
 import "./SoftSkills.css";
 
 import friendlyIcon from "../Images/friendly.svg";
@@ -45,10 +46,12 @@ const skillsArr = [
 
 
 function SoftSkills() {
+    const ref = React.useRef(null);
+	const [observed] = useObserver(ref);
     const [softText, setSoftText] = React.useState([]);
 
     return (
-        <section className="flex-about__skillSoft card fade-right">
+        <section className={`flex-about__skillSoft card fade-right ${observed ? "appear" : ""}`} ref={ref}>
             <h3 className="card__title">Soft Skills</h3>
             <SkillsContainer>
                 {skillsArr.map(skill => (
