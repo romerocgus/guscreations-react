@@ -9,7 +9,6 @@ import {Projects} from "../Projects";
 import {Contact} from "../Contact";
 import {Footer} from "../Footer";
 import {useObserver} from "../useObserver";
-// import './App.css';
 
 function App() {
 

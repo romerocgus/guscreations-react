@@ -1,5 +1,6 @@
 {
-  "name": "personal-webpage-react",
+  "name": "guscreations.net",
+  "homepage": "http://guscreations.net/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

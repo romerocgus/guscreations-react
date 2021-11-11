@@ -2,6 +2,9 @@ import React from "react";
 
 function useObserver(ref){
     const [observed, setObserved] = React.useState(false);
+    const options ={
+        rootMargin: "0px 0px 100px 0px"
+    }
 
     React.useEffect(function(){
         const observer = new IntersectionObserver(entries =>{
@@ -10,7 +13,7 @@ function useObserver(ref){
                 setObserved(true);
                 observer.disconnect();
             }
-        })
+        }, options)
         observer.observe(ref.current);
     })
     return [observed, setObserved]
